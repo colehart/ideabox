@@ -20,17 +20,18 @@ describe 'User creates a new idea' do
       expect(page).to have_content new_description
     end
   end
-  # context 'the submitted data is invalid' do
-  #   scenario 'they see an error message' do
-  #     flash = "Title can't be blank"
-  #
-  #     visit ideas_path
-  #     click_on 'Create a New Idea'
-  #
-  #     fill_in 'Description', with: idea.description
-  #     click_on 'Save Idea'
-  #
-  #     expect(page).to have_content(flash)
-  #   end
-  # end
+  context 'the submitted data is invalid' do
+    scenario 'they see an error message' do
+      new_description = 'New Description'
+      flash = "Title can't be blank"
+
+      visit ideas_path
+      click_on 'Create a New Idea'
+
+      fill_in 'Description', with: new_description
+      click_on 'Save Idea'
+
+      expect(page).to have_content(flash)
+    end
+  end
 end
