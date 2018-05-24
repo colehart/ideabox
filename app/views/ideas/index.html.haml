@@ -1,0 +1,18 @@
+%h1 All Ideas
+= link_to 'Create a New Idea', new_idea_path
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th
+      %th
+
+  %tbody
+    - @ideas.each do |idea|
+      %tr
+        %td= link_to "#{idea.title}", idea_path(idea)
+        %td= idea.description
+        %td= link_to 'Edit', edit_idea_path(idea)
+        %td= link_to 'Delete', idea_path(idea), method: :delete, data: { confirm: 'Are you sure?' }

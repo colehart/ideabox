@@ -12,3 +12,6 @@ Lint/BooleanSymbol:
 
 Metrics/ClassLength:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
